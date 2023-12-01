@@ -1,0 +1,399 @@
+{
+	"info": {
+		"_postman_id": "95c4d505-f551-4f04-b837-f792b27b3977",
+		"name": "GitHub",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28772716",
+		"_collection_link": "https://lively-rocket-345197.postman.co/workspace/QA_course_November_2023~bcf6825a-af00-4f83-8a9c-cf05393761b0/collection/28772716-95c4d505-f551-4f04-b837-f792b27b3977?action=share&source=collection_link&creator=28772716"
+	},
+	"item": [
+		{
+			"name": "Get issues by Repo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/repos/vyankulov/SoftUni-QA-Fundamentals-course/issues",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"vyankulov",
+						"SoftUni-QA-Fundamentals-course",
+						"issues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get issue #1 by Repo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/repos/vyankulov/SoftUni-QA-Fundamentals-course/issues/1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"vyankulov",
+						"SoftUni-QA-Fundamentals-course",
+						"issues",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create an issue by Repo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer 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",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"My first issue from Postman\",\n    \"body\": \"Issue created from Postman.\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/vyankulov/SoftUni-QA-Fundamentals-course/issues",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"vyankulov",
+						"SoftUni-QA-Fundamentals-course",
+						"issues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit issue #3 by Repo",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer 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",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Edited issue (new title)\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/vyankulov/SoftUni-QA-Fundamentals-course/issues/3",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"vyankulov",
+						"SoftUni-QA-Fundamentals-course",
+						"issues",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Close issue #3 by Repo",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer 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",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"state\": \"closed\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/vyankulov/SoftUni-QA-Fundamentals-course/issues/3",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"vyankulov",
+						"SoftUni-QA-Fundamentals-course",
+						"issues",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a label to issue #2 by Repo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer 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",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"labels\": [\n        \"bug\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/vyankulov/SoftUni-QA-Fundamentals-course/issues/2/labels",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"vyankulov",
+						"SoftUni-QA-Fundamentals-course",
+						"issues",
+						"2",
+						"labels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get issue #2 labels by Repo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/repos/vyankulov/SoftUni-QA-Fundamentals-course/issues/2/labels",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"vyankulov",
+						"SoftUni-QA-Fundamentals-course",
+						"issues",
+						"2",
+						"labels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a comment for issue",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer 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",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"body\": \"This is a comment from Postman\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/vyankulov/SoftUni-QA-Fundamentals-course/issues/1/comments",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"vyankulov",
+						"SoftUni-QA-Fundamentals-course",
+						"issues",
+						"1",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all comments by Repo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/repos/vyankulov/SoftUni-QA-Fundamentals-course/issues/comments",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"vyankulov",
+						"SoftUni-QA-Fundamentals-course",
+						"issues",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get comment by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/repos/vyankulov/SoftUni-QA-Fundamentals-course/issues/comments/1824355855",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"vyankulov",
+						"SoftUni-QA-Fundamentals-course",
+						"issues",
+						"comments",
+						"1824355855"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit comment by id",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer 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",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"body\": \"Edited comment\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/vyankulov/SoftUni-QA-Fundamentals-course/issues/comments/1824355855",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"vyankulov",
+						"SoftUni-QA-Fundamentals-course",
+						"issues",
+						"comments",
+						"1824355855"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete comment by id ",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer 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",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.github.com/repos/vyankulov/SoftUni-QA-Fundamentals-course/issues/comments/1824355855",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"vyankulov",
+						"SoftUni-QA-Fundamentals-course",
+						"issues",
+						"comments",
+						"1824355855"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

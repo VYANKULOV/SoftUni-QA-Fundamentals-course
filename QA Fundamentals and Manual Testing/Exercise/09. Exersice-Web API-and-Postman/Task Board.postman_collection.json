@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "fec7dbd2-c71a-4927-a0dd-4d7fb3917fde",
+		"name": "Task Board",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28772716",
+		"_collection_link": "https://lively-rocket-345197.postman.co/workspace/QA_course_November_2023~bcf6825a-af00-4f83-8a9c-cf05393761b0/collection/28772716-fec7dbd2-c71a-4927-a0dd-4d7fb3917fde?action=share&source=collection_link&creator=28772716"
+	},
+	"item": [
+		{
+			"name": "GET All Boards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://taskboardjsv02--softuniqa.repl.co/api/boards",
+					"protocol": "https",
+					"host": [
+						"taskboardjsv02--softuniqa",
+						"repl",
+						"co"
+					],
+					"path": [
+						"api",
+						"boards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://taskboardjsv02--softuniqa.repl.co/api/tasks",
+					"protocol": "https",
+					"host": [
+						"taskboardjsv02--softuniqa",
+						"repl",
+						"co"
+					],
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get the tasks from board named \"Done\"",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://taskboardjsv02--softuniqa.repl.co/api/tasks/board/done",
+					"protocol": "https",
+					"host": [
+						"taskboardjsv02--softuniqa",
+						"repl",
+						"co"
+					],
+					"path": [
+						"api",
+						"tasks",
+						"board",
+						"done"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Tasks by keyword",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://taskboardjsv02--softuniqa.repl.co/api/tasks/search/home",
+					"protocol": "https",
+					"host": [
+						"taskboardjsv02--softuniqa",
+						"repl",
+						"co"
+					],
+					"path": [
+						"api",
+						"tasks",
+						"search",
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Add tests\",\n    \"description\": \"API + UI tests\",\n    \"board\": \"Open\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://taskboardjsv02--softuniqa.repl.co/api/tasks",
+					"protocol": "https",
+					"host": [
+						"taskboardjsv02--softuniqa",
+						"repl",
+						"co"
+					],
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit task",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"edited task\",\n    \"board\": \"done\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://taskboardjsv02--softuniqa.repl.co/api/tasks/7",
+					"protocol": "https",
+					"host": [
+						"taskboardjsv02--softuniqa",
+						"repl",
+						"co"
+					],
+					"path": [
+						"api",
+						"tasks",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete task",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"edited task\",\n    \"board\": \"done\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://taskboardjsv02--softuniqa.repl.co/api/tasks/1",
+					"protocol": "https",
+					"host": [
+						"taskboardjsv02--softuniqa",
+						"repl",
+						"co"
+					],
+					"path": [
+						"api",
+						"tasks",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
