@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "58180aba-f960-4058-8d86-b666ae895c83",
+		"name": "Foody Web App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28772716",
+		"_collection_link": "https://lively-rocket-345197.postman.co/workspace/QA_course_November_2023~bcf6825a-af00-4f83-8a9c-cf05393761b0/collection/28772716-58180aba-f960-4058-8d86-b666ae895c83?action=share&source=collection_link&creator=28772716"
+	},
+	"item": [
+		{
+			"name": "Log in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userName\": \"Vani\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:86/api/User/Authentication",
+					"protocol": "http",
+					"host": [
+						"softuni-qa-loadbalancer-2137572849",
+						"eu-north-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"port": "86",
+					"path": [
+						"api",
+						"User",
+						"Authentication"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create food",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiJiNzFlNWQ3MC1iMWMzLTRkODYtOGNjYi05Njc3M2UwNjNlZTEiLCJpYXQiOiIxMi8wOS8yMDIzIDExOjU1OjU4IiwiVXNlcklkIjoiODlhODU5ZTQtN2NiNC00NmE0LTNlMGMtMDhkYmJmNjkzYWRjIiwiRW1haWwiOiJ2YW5pbmFAbWFpbC5jb20iLCJVc2VyTmFtZSI6IlZhbmkiLCJleHAiOjE3MDIxNDQ1NTgsImlzcyI6IkZvb2R5X0FwcF9Tb2Z0VW5pIiwiYXVkIjoiRm9vZHlfV2ViQVBJX1NvZnRVbmkifQ.AgE7Pndzr90tucm9BFPdASmEeeIbKtaQ-Xjjwb7suy8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Salmon\",\n    \"description\": \"Baked salmon\",\n    \"url\": \"https://hips.hearstapps.com/hmg-prod/images/baked-salmon-recipe-1646167646.jpg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:86/api/Food/Create",
+					"protocol": "http",
+					"host": [
+						"softuni-qa-loadbalancer-2137572849",
+						"eu-north-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"port": "86",
+					"path": [
+						"api",
+						"Food",
+						"Create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search foods by name",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiJiNzFlNWQ3MC1iMWMzLTRkODYtOGNjYi05Njc3M2UwNjNlZTEiLCJpYXQiOiIxMi8wOS8yMDIzIDExOjU1OjU4IiwiVXNlcklkIjoiODlhODU5ZTQtN2NiNC00NmE0LTNlMGMtMDhkYmJmNjkzYWRjIiwiRW1haWwiOiJ2YW5pbmFAbWFpbC5jb20iLCJVc2VyTmFtZSI6IlZhbmkiLCJleHAiOjE3MDIxNDQ1NTgsImlzcyI6IkZvb2R5X0FwcF9Tb2Z0VW5pIiwiYXVkIjoiRm9vZHlfV2ViQVBJX1NvZnRVbmkifQ.AgE7Pndzr90tucm9BFPdASmEeeIbKtaQ-Xjjwb7suy8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:86/api/Food/Search?keyword=salmon",
+					"protocol": "http",
+					"host": [
+						"softuni-qa-loadbalancer-2137572849",
+						"eu-north-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"port": "86",
+					"path": [
+						"api",
+						"Food",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "salmon"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit food",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiJiNzFlNWQ3MC1iMWMzLTRkODYtOGNjYi05Njc3M2UwNjNlZTEiLCJpYXQiOiIxMi8wOS8yMDIzIDExOjU1OjU4IiwiVXNlcklkIjoiODlhODU5ZTQtN2NiNC00NmE0LTNlMGMtMDhkYmJmNjkzYWRjIiwiRW1haWwiOiJ2YW5pbmFAbWFpbC5jb20iLCJVc2VyTmFtZSI6IlZhbmkiLCJleHAiOjE3MDIxNDQ1NTgsImlzcyI6IkZvb2R5X0FwcF9Tb2Z0VW5pIiwiYXVkIjoiRm9vZHlfV2ViQVBJX1NvZnRVbmkifQ.AgE7Pndzr90tucm9BFPdASmEeeIbKtaQ-Xjjwb7suy8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " [\n    {\n        \"path\": \"/name\",\n        \"op\": \"replace\",\n        \"value\": \"Baked salmon\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:86/api/Food/Edit/4891a187-539a-4e1b-d36c-08dbb764b6b4",
+					"protocol": "http",
+					"host": [
+						"softuni-qa-loadbalancer-2137572849",
+						"eu-north-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"port": "86",
+					"path": [
+						"api",
+						"Food",
+						"Edit",
+						"4891a187-539a-4e1b-d36c-08dbb764b6b4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete food ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiJiNzFlNWQ3MC1iMWMzLTRkODYtOGNjYi05Njc3M2UwNjNlZTEiLCJpYXQiOiIxMi8wOS8yMDIzIDExOjU1OjU4IiwiVXNlcklkIjoiODlhODU5ZTQtN2NiNC00NmE0LTNlMGMtMDhkYmJmNjkzYWRjIiwiRW1haWwiOiJ2YW5pbmFAbWFpbC5jb20iLCJVc2VyTmFtZSI6IlZhbmkiLCJleHAiOjE3MDIxNDQ1NTgsImlzcyI6IkZvb2R5X0FwcF9Tb2Z0VW5pIiwiYXVkIjoiRm9vZHlfV2ViQVBJX1NvZnRVbmkifQ.AgE7Pndzr90tucm9BFPdASmEeeIbKtaQ-Xjjwb7suy8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:86/api/Food/Delete/4891a187-539a-4e1b-d36c-08dbb764b6b4",
+					"protocol": "http",
+					"host": [
+						"softuni-qa-loadbalancer-2137572849",
+						"eu-north-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"port": "86",
+					"path": [
+						"api",
+						"Food",
+						"Delete",
+						"4891a187-539a-4e1b-d36c-08dbb764b6b4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
